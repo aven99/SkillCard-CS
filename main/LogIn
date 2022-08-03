@@ -1,0 +1,29 @@
+from pydoc import importfile
+from tkinter import Tk
+from tkinter import *
+from tkinter import ttk
+from PIL import Image, ImageTk
+import execute_query
+
+root2 = Tk()
+root2.title('Log In')
+root2.geometry("200x200")
+root2.maxsize(200, 200)
+root2.minsize(200, 200)
+
+#root2
+def getClockNum():
+    global clockNum
+    clockNum = LogInText.get()
+    printClock = Label(root2,text = clockNum)
+    printClock.pack()
+
+logIn = Label(root2,text="Enter Clock Number", font=('Helvetica', 10, 'bold'), width = 25, height= 2,highlightthickness=2,highlightbackground="#C1C1C1")
+logIn.pack()
+LogInText = Entry(root2, width=20)
+LogInText.pack()
+
+okButton = Button(root2, text= "submit",width= 10, command= SkillCardMainUI.execute_query)
+okButton.pack()
+
+root2.mainloop()
